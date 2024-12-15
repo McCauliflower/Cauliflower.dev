@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Welcome to My Nuxt 3 App</h1>
-    <p>{{ exampleStore.message }}</p>
+    <p>{{ rootStore.message }}</p>
     <button @click="updateMessage">Update Message</button>
   </div>
 </template>

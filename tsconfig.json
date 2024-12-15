@@ -20,8 +20,8 @@
     ]
   },
   "include": [
-    "nuxt.config.ts",  // Include Nuxt configuration file if needed
     "types/**/*.ts",  // Include other custom type definitions if any
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*",
   ]
 }
