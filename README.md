@@ -60,5 +60,5 @@ This project is open source and available under the MIT License.
 
 💬 Contact
 
-Feel free to reach out via email at mccauliflower@protonmail.com or connect with me with me on LinkedIn(https://www.linkedin.com/in/mccall-tucker-53ba47132/)!
+Feel free to reach out via email at mccauliflower@protonmail.com or connect with me with me on [LinkedIn](https://www.linkedin.com/in/mccall-tucker-53ba47132/)!
 
