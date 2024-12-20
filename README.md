@@ -2,7 +2,7 @@
 
 🚧 UNDER CONSTRUCTION 🚧
 
-A personal website built with Nuxt 3, Vue 3, TypeScript, and Vite. The project employs Server-Side Rendering (SSR) for better performance and SEO, alongside a rigorous coding standard enforced by ESLint. 🚀
+A personal website built with TypeScript, using Nuxt 3, Vue 3, Pinia, and Vite. The project employs Server-Side Rendering (SSR) for better performance and SEO, alongside a rigorous coding standard enforced by ESLint. 🚀
 
 🎉 Features
 
@@ -13,6 +13,8 @@ A personal website built with Nuxt 3, Vue 3, TypeScript, and Vite. The project e
 📜 TypeScript: Type-safe development for fewer runtime errors.
 
 ⚡ Vite: Lightning-fast development environment.
+
+🍍 Pinia: Pinia for intuitive and powerful state management.
 
 🔍 ESLint: Code linting for cleaner and maintainable code.
 
