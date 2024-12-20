@@ -1,6 +1,6 @@
 # 🌐 Welcome to Cauliflower.dev 👾
 
-## 🚧 UNDER CONSTRUCTION 🚧
+# 🚧 CURRENTLY UNDER CONSTRUCTION 🚧
 
 A personal website built with TypeScript, using Nuxt 3, Vue 3, Pinia, and Vite. The project employs Server-Side Rendering (SSR) for better performance and SEO, alongside a rigorous coding standard enforced by ESLint. 🚀
 
@@ -26,7 +26,7 @@ Install the project dependencies:
 
 `npm install`
 
-⚡ ### Development Server
+### ⚡ Development Server
 
 Start the development server and visit your project at http://localhost:3000:
 
