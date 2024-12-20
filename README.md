@@ -1,10 +1,10 @@
-🌐 Welcome to Cauliflower.dev
+🌐 #Welcome to Cauliflower.dev
 
-🚧 UNDER CONSTRUCTION 🚧
+🚧 ##UNDER CONSTRUCTION 🚧
 
 A personal website built with TypeScript, using Nuxt 3, Vue 3, Pinia, and Vite. The project employs Server-Side Rendering (SSR) for better performance and SEO, alongside a rigorous coding standard enforced by ESLint. 🚀
 
-🎉 Features
+🎉 ###Features
 
 🖥️ Nuxt 3 SSR: Powerful Server-Side Rendering framework for fast, SEO-friendly applications.
 
@@ -22,29 +22,29 @@ A personal website built with TypeScript, using Nuxt 3, Vue 3, Pinia, and Vite. 
 
 📦 Setup
 
-Install the project dependencies:
+###Install the project dependencies:
 
-npm install
+`npm install`
 
-⚡ Development Server
+⚡ ###Development Server
 
 Start the development server and visit your project at http://localhost:3000:
 
-npm run dev
+`npm run dev`
 
 🏗️ Production
 
 Build the application for production:
 
-npm run build
+`npm run build`
 
 Preview the production build locally:
 
-npm run preview
+`npm run preview`
 
 Check out the deployment documentation for more information on deploying your application to production.
 
-🛠️ Technologies Used
+🛠️ ###Technologies Used
 
 Nuxt 3: Nuxt simplifies Vue development with robust features.
 
@@ -56,11 +56,11 @@ Vite: Vite offers blazing-fast build tooling.
 
 ESLint: ESLint enforces a clean and maintainable codebase.
 
-📄 License
+📄 ###License
 
 This project is open source and available under the MIT License.
 
-💬 Contact
+💬 ###Contact
 
 Feel free to reach out via email at mccauliflower@protonmail.com or connect with me with me on [LinkedIn](https://www.linkedin.com/in/mccall-tucker-53ba47132/)!
 
