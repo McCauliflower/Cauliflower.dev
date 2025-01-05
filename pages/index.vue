@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { piniaRootStore } from '@/store/index';
+import { piniaRootStore } from '../store/index';
 
 const rootStore = piniaRootStore();
 

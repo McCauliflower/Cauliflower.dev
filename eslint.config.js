@@ -17,7 +17,7 @@ export default defineConfig({
     parser: vueParser,  // This uses `vue-eslint-parser` for Vue files
     parserOptions: {
       parser: typescriptParser,  // This uses `@typescript-eslint/parser` for TypeScript support
-      ecmaVersion: 2020,
+      ecmaVersion: 2021,
       sourceType: 'module',
       ecmaFeatures: {
         jsx: true,

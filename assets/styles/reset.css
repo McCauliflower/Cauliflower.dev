@@ -1,0 +1,123 @@
+/* reset.css - A modern CSS reset inspired by current trends */
+
+/* Resetting all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensures consistent typography */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Resetting images and media */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove default list styling */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Reset anchor tags */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset form elements */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  background: none;
+}
+
+/* Reset headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Reset table elements */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Modern approach to reset using :where() for specificity control */
+:where(a, button) {
+  cursor: pointer;
+}
+
+/* Remove default styling from interactive elements */
+button,
+input[type="submit"],
+input[type="button"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Reset quotes */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+/* Ensure html and body take up full viewport height */
+html,
+body {
+  height: 100%;
+}
+
+/* Reset media queries for responsive design */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Use of revert for some properties to maintain usability */
+button,
+input {
+  all: unset;
+  display: revert;
+}
+
+/* Reset all elements to revert their styles but keep display */
+* {
+  all: revert;
+  display: revert;
+}

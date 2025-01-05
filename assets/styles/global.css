@@ -1,0 +1,14 @@
+
+@import '/assets/styles/reset.css';
+
+@font-face {
+  font-family: AgaveBold;
+  src: url(../fonts/AgaveNerdFont-Bold.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Agave;
+  src: url(../fonts/AgaveNerdFont-Regular.ttf);
+  font-display: swap;
+}
