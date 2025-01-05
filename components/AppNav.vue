@@ -6,10 +6,10 @@
         v-for="item in menuItems"
         :key="item.name"
         class="navbar-item"
-        @mouseenter="handleMouseEnter(item)"
+        @mouseenter="handleMouseEnter"
         @mouseleave="handleMouseLeave"
       >
-        <a :href="item.link">{{ item.name }}</a>
+        <NuxtLink :to="item.link">{{ item.name }} </NuxtLink>
       </div>
       <div class="indicator" ref="indicator" />
     </div>
@@ -30,25 +30,31 @@ const navbar = ref<HTMLElement | null>(null);
 const indicator = ref<HTMLElement | null>(null);
 const activeBackground = ref<string>('');
 
-const backgroundStyle = computed(() => ({
-  backgroundImage: activeBackground.value,
-  transition: 'background-image 0.5s ease-in-out',
-}));
+const backgroundStyle = computed(() => {
+  console.log('activeBackground', activeBackground);
+  return {
+    backgroundImage: activeBackground.value,
+    transition: 'background-image 0.5s ease-in-out',
+  };
+});
 
-const handleMouseEnter = (item: { name: string; link: string; background: string }) => {
-  const target = event?.currentTarget as HTMLElement;
-  if (indicator.value && target) {
-    indicator.value.style.left = `${target.offsetLeft}px`;
-    indicator.value.style.width = `${target.offsetWidth}px`;
-  }
-  activeBackground.value = item.background;
+const handleMouseEnter = ($event: Event) => {
+  console.log('$event', $event);
+  const target = $event.target as HTMLElement;
+  console.log('target', target);
+  // if (indicator.value && target) {
+  //   indicator.value.style.left = `${target.offsetLeft}px`;
+  //   indicator.value.style.width = `${target.offsetWidth}px`;
+  // }
+  activeBackground.value = $event.background;
 };
 
-const handleMouseLeave = () => {
-  if (indicator.value && navbar.value) {
-    indicator.value.style.left = '0';
-    indicator.value.style.width = '0';
-  }
+const handleMouseLeave = ($event) => {
+  console.log('$event', $event);
+  // if (indicator.value && navbar.value) {
+  //   indicator.value.style.left = '0';
+  //   indicator.value.style.width = '0';
+  // }
   activeBackground.value = '';
 };
 </script>

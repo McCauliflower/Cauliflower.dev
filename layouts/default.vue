@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-navigation/>
+        <app-nav />
         <Nuxt/>
         <template v-if="$route.path !== '/login'">
             <app-footer/>
