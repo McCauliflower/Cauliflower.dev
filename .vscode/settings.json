@@ -1,5 +1,12 @@
 {
     "cSpell.words": [
         "nuxi"
-    ]
+    ],
+    "search.exclude": {
+        "": true,
+        "**/node_modules": false
+    },
+    "files.exclude": {
+        "**/node_modules": true
+    }
 }
