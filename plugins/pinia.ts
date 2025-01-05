@@ -1,7 +1,12 @@
-import { defineNuxtPlugin } from '#app';
-import { createPinia } from 'pinia';
+import { defineStore } from 'pinia'
 
-export default defineNuxtPlugin((nuxtApp: any) => {
-  const pinia = createPinia();
-  nuxtApp.vueApp.use(pinia);
-});
+export const useExampleStore = defineStore('example', {
+  state: () => ({
+    count: 0,
+  }),
+  actions: {
+    increment() {
+      this.count++
+    },
+  },
+})

@@ -1,12 +1,12 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
-export const piniaRootStore = defineStore('root', {
+export const useExampleStore = defineStore('example', {
   state: () => ({
-    message: 'Hello from Pinia!'
+    count: 0,
   }),
   actions: {
-    updateMessage(newMessage: string) {
-      this.message = newMessage;
-    }
-  }
-});
+    increment() {
+      this.count++
+    },
+  },
+})

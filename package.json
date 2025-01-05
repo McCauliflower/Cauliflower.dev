@@ -3,9 +3,9 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "build": "nuxi build && tsc",
+    "build": "nuxi build && vue-tsc --noEmit",
     "type-check": "tsc --noEmit",
-    "dev": "nuxi dev",
+    "dev": "nuxi dev && vue-tsc --noEmit",
     "generate": "nuxi generate",
     "preview": "nuxi preview",
     "postinstall": "nuxi prepare",
@@ -15,14 +15,12 @@
   "dependencies": {
     "nuxt": "^3.15.0",
     "pinia": "^2.3.0",
-    "vue": "latest",
-    "vue-router": "latest"
+    "vue": "^3.4.14",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
-    "@nuxt/types": "^2.18.1",
     "@nuxt/typescript-build": "^3.0.2",
-    "@nuxt/typescript-runtime": "^3.0.2",
     "@pinia/nuxt": "^0.9.0",
     "@typescript-eslint/eslint-plugin": "^8.19.0",
     "@typescript-eslint/parser": "^8.19.0",
@@ -34,6 +32,7 @@
     "globals": "^15.14.0",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.19.0",
-    "vue-eslint-parser": "^9.4.3"
+    "vue-eslint-parser": "^9.4.3",
+    "vue-tsc": "^2.2.0"
   }
 }
