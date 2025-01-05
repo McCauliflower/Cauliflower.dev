@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "strict": true,
+    "jsx": "preserve",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -11,7 +12,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./*"]
     },
     "types": [
       "node",
@@ -23,5 +24,6 @@
     "types/**/*.ts",  // Include other custom type definitions if any
     "src/**/*.ts",
     "src/**/*",
-  ]
+  ],
+  "exclude": ["node_modules", ".nuxt", "dist"]
 }

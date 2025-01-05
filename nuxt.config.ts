@@ -10,4 +10,12 @@ export default defineNuxtConfig({
       },
     },
   },
+  modules: [
+    '@nuxt/typescript-build',
+    '@pinia/nuxt'
+  ],
+  typescript: {
+    typeCheck: true,
+    strict: true
+  }
 })
