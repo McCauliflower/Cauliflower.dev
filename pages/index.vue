@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-nav />
-     <div ref="sceneContainer" class="scene-container"></div>
+    <div ref="sceneContainer" class="scene-container"></div>
   </div>
 </template>
 
@@ -11,8 +11,16 @@ import * as THREE from 'three';
 
 export default defineComponent({
   name: 'IndexPage',
+
   setup() {
     const sceneContainer = ref<HTMLElement | null>(null);
+
+   function getBox(w: number, h: number, d: number) {
+      const geometry = new THREE.BoxGeometry(w, h, d);
+      const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+      const mesh = new THREE.Mesh(geometry, material);
+      return mesh;
+   };
 
     onMounted(() => {
       if (sceneContainer.value) {
@@ -25,18 +33,17 @@ export default defineComponent({
         sceneContainer.value.appendChild(renderer.domElement);
 
         // Add a simple cube
-        const geometry = new THREE.BoxGeometry(1, 1, 1);
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
+        const mesh = getBox(1, 1, 1);
+        
+        scene.add(mesh);
 
         camera.position.z = 5;
 
         // Animation loop
         function animate() {
           requestAnimationFrame(animate);
-          cube.rotation.x += 0.01;
-          cube.rotation.y += 0.01;
+          mesh.rotation.x += 0.01;
+          mesh.rotation.y += 0.01;
           renderer.render(scene, camera);
         }
         
