@@ -1,103 +1,149 @@
-<!-- File: components/Navbar3D.vue -->
 <template>
-  <div class="navbar-container" :style="backgroundStyle">
-    <div class="navbar" ref="navbar">
-      <div
-        v-for="item in menuItems"
-        :key="item.name"
-        class="navbar-item"
-        @mouseenter="handleMouseEnter"
-        @mouseleave="handleMouseLeave"
-      >
-        <NuxtLink :to="item.link">{{ item.name }} </NuxtLink>
-      </div>
-      <div class="indicator" ref="indicator" />
+  <header>
+    <div class="nav-wrapper">
+      <img id="cauliflower-logo"
+           src="public/CauliflowerSMALL.png"
+           height="auto"
+           alt="Icon"
+           hre="/"
+      </img>
+      <nav id="cssmenu">
+        <ul>
+          <li class="active">
+            <NuxtLink id="one" to="/art">Art</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink id="two" to="/code">Code</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink id="three" to="/login">Login</NuxtLink>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </div>
+  </header>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-
-const menuItems = [
-  { name: 'Home', link: '/', background: 'url(/images/home-bg.jpg)' },
-  { name: 'Art Gallery', link: '/art-gallery', background: 'url(/images/about-bg.jpg)' },
-  { name: 'Code Gallery', link: '/code-gallery', background: 'url(/images/services-bg.jpg)' },
-  { name: 'Login', link: '/login', background: 'url(/images/contact-bg.jpg)' },
-];
-
-const navbar = ref<HTMLElement | null>(null);
-const indicator = ref<HTMLElement | null>(null);
-const activeBackground = ref<string>('');
-
-const backgroundStyle = computed(() => {
-  console.log('activeBackground', activeBackground);
-  return {
-    backgroundImage: activeBackground.value,
-    transition: 'background-image 0.5s ease-in-out',
-  };
-});
-
-const handleMouseEnter = ($event: Event) => {
-  console.log('$event', $event);
-  const target = $event.target as HTMLElement;
-  console.log('target', target);
-  // if (indicator.value && target) {
-  //   indicator.value.style.left = `${target.offsetLeft}px`;
-  //   indicator.value.style.width = `${target.offsetWidth}px`;
-  // }
-  activeBackground.value = $event.background;
-};
-
-const handleMouseLeave = ($event) => {
-  console.log('$event', $event);
-  // if (indicator.value && navbar.value) {
-  //   indicator.value.style.left = '0';
-  //   indicator.value.style.width = '0';
-  // }
-  activeBackground.value = '';
-};
 </script>
 
 <style scoped>
-.navbar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #282c34;
-  background-size: cover;
-  background-position: center;
-}
+@import url(assets/styles/reset.css);
+@import url(assets/styles/global.css);
 
-.navbar {
-  display: flex;
-  position: relative;
-  background: rgba(51, 51, 51, 0.8);
-  border-radius: 10px;
-  overflow: hidden;
-  padding: 10px;
+.nav-wrapper {
+  position: fixed;
+  width: 100%;
+  padding: 0 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 60px;
+  box-sizing: border-box;
+  padding: 0;
 }
-
-.navbar-item {
+#cauliflower-logo {
+  filter: brightness(1) contrast(1) opacity(0.8) invert(0) sepia(0.5) saturate(.6) hue-rotate(0deg);
   position: relative;
-  margin: 0 15px;
+  height: 40px;
+  width: 40px;
+  padding-top: 7px;
   cursor: pointer;
-  color: white;
+  transition: all .5s;
+}
+#cauliflower-logo:hover {
+  filter: opacity(1) sepia(0);
+}
+
+#cssmenu {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: calc(50% - 200px);
+  width: 100%;
+}
+
+#cssmenu > ul {
+  background: white;
+}
+
+#cssmenu ul li {
+  min-width: 120px;
+  margin: 0 auto;
+}
+
+#cssmenu ul, #cssmenu ul li, #cssmenu ul li a {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  display: block;
+  box-sizing: border-box;
+}
+
+#cssmenu > ul > li {
+  float: left;
+  perspective: 1000px;
+}
+
+#cssmenu > ul > li > a {
+  padding: 16px 20px;
+  font-size: 12pt;
+  color: #8C8479;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   text-decoration: none;
-  transition: color 0.3s;
+  background: white;
+  transition: all .3s;
+  transform-origin: 50% 0;
+  transform-style: preserve-3d;
 }
 
-.navbar-item:hover {
-  color: #61dafb;
+#cssmenu>ul>li:hover>a,
+#cssmenu>ul>li>a:hover {
+  color: #8C8479;
+  background-color: #d6d6d6;
+  transform: rotateX(90deg) translateY(-23px);
+  position: relative;
 }
 
-.indicator {
+#cssmenu>ul>li>a::before {
   position: absolute;
-  bottom: 0;
-  height: 4px;
-  background: #61dafb;
-  transition: all 0.3s;
-  pointer-events: none;
+  top: 100%;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 16px 20px;
+  color: #8C8479;
+  background: #781e32;
+  content: attr(data-title);
+  transition: background .2s;
+  transform: rotateX(-90deg);
+  transform-origin: 50% 0;
 }
+
+#cssmenu>ul>li>a::before {
+  background-color: white;
+}
+
+#cssmenu>ul>li>a[id="one"]::before {
+  content: "ART";
+}
+#cssmenu>ul>li>a[id="two"]::before {
+  content: "CODE";
+}
+#cssmenu>ul>li>a[id="three"]::before {
+  content: "LOGIN";
+}
+
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  color: #8C8479;
+  background-color: #d6d6d6;
+  transform: rotateX(90deg) translateY(-23px);
+}
+
+/* ... other necessary styles like for small screens, dropdowns etc. */
 </style>

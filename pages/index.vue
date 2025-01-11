@@ -1,14 +1,57 @@
 <template>
   <div>
-    <h1>Index Page</h1>
-    <p>Count: {{ count }}</p>
-    <button @click="increment">Increment</button>
+    <app-nav />
+     <div ref="sceneContainer" class="scene-container"></div>
   </div>
 </template>
 
-<script setup lang="ts">
-import { useExampleStore } from '../store'
+<script lang="ts">
+import { defineComponent, onMounted, ref } from 'vue';
+import * as THREE from 'three';
 
-const store = useExampleStore()
-const { count, increment } = store
+export default defineComponent({
+  name: 'IndexPage',
+  setup() {
+    const sceneContainer = ref<HTMLElement | null>(null);
+
+    onMounted(() => {
+      if (sceneContainer.value) {
+        // Scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        sceneContainer.value.appendChild(renderer.domElement);
+
+        // Add a simple cube
+        const geometry = new THREE.BoxGeometry(1, 1, 1);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        camera.position.z = 5;
+
+        // Animation loop
+        function animate() {
+          requestAnimationFrame(animate);
+          cube.rotation.x += 0.01;
+          cube.rotation.y += 0.01;
+          renderer.render(scene, camera);
+        }
+        
+        animate();
+      }
+    });
+
+    return { sceneContainer };
+  }
+});
 </script>
+
+<style>
+.scene-container {
+  width: 100vw;
+  height: 100vh;
+}
+</style>

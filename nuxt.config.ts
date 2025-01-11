@@ -31,7 +31,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    '@pinia/nuxt'
+    '@pinia/nuxt',
   ],
   typescript: {
     typeCheck: true,
