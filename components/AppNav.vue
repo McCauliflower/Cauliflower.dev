@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header style="display:none">
     <div class="nav-wrapper">
       <NuxtLink to="/">
         <img id="cauliflower-logo"
