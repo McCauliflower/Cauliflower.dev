@@ -1,5 +1,5 @@
 <template>
-  <header style="display:none">
+  <header>
     <div class="nav-wrapper">
       <NuxtLink to="/">
         <img id="cauliflower-logo"
@@ -29,33 +29,34 @@
 import { ref, computed } from 'vue';
 </script>
 
-<style scoped>
+<style type="scss" scoped>
 @import url(assets/styles/global.css);
+header {
+  height: 60px !important;
+}
 nav-wrapper {
   position: fixed;
   width: 100%;
   padding: 0 20px;
   background-color: #f8f8f8;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
-  height: 60px;
   box-sizing: border-box;
   padding: 0;
   font-family: 'AgaveBold', sans-serif;
   box-shadow: 0 3px 3px rgba(150, 150, 150, 0.5);
+}
 
-  #cauliflower-logo {
+#cauliflower-logo {
     filter: brightness(1) contrast(1) opacity(0.8) invert(0) sepia(0.5) saturate(.6) hue-rotate(0deg);
     position: relative;
-    height: 40px;
-    width: 40px;
+    height: 60px !important;
     padding: 7px 0 0 10px;
     cursor: pointer;
     transition: all .5s;
 
     &:hover {
       filter: opacity(1) sepia(0);
-    }
-  }
+    }  
 }
 
 #cssmenu {
@@ -64,9 +65,18 @@ nav-wrapper {
   top: 0;
   left: calc(50% - 200px);
   width: 100%;
+  height: 60px;
 
   > ul {
     background: white;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    left: calc(50% - 200px);
+    position: fixed;
+    font-family: 'Agave';
+    padding: 0;
+    margin: 0;
 
     li {
       min-width: 120px;
